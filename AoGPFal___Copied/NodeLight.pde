@@ -80,4 +80,9 @@ class NodeLight extends NodeBase {
   EaseFloat    getSpotAngleRef()                                 { return mSpotAngle; }
   EaseFloat    getSpotConcentrationRef()                         { return mSpotConcentration; }
   
+  PVector      getPosition()                                     { return mPosition.get(); }
+  PVector      getDirection()                                    { return mDirection.get(); }
+  
+  PVector      getPositionVelocity()                             { return mPosition.getVelocity(); }
+  PVector      getDirectionVelocity()                            { return mDirection.getVelocity(); }t
     
