@@ -40,10 +40,10 @@ class EaseVecDelta {
     acc.addState( iStateName, iValue );
   }
 
-  void goToState(String iStateNae, float iDuration) {
+  void goToState(String iStateName, float iDuration) {
     //Goto component states
     pos.goToState( iStateName, iDuration ); 
-    vel.goToSTate( iStateName, iDuration ); 
+    vel.goToState( iStateName, iDuration ); 
     acc.goToState( iStateName, iDuration );
   }
 
@@ -71,7 +71,7 @@ class EaseVecDelta {
 
   void set(PVector iPosition, PVector iVelocity, PVector iAcceleration) {
     pos.set( iPosition ); 
-    vec.set( iVelocity ); 
+    vel.set( iVelocity ); 
     acc.set( iAcceleration );
   }
 
@@ -91,7 +91,7 @@ class EaseVecDelta {
     //reset components
     pos.resetTransition(); 
     vel.resetTransition(); 
-    acc.resetTrantition();
+    acc.resetTransition();
   }
 
   void startTransition() {

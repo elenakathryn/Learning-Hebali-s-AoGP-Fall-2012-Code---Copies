@@ -58,7 +58,7 @@ class NodeBase {
       //Remove the parent reference from child node at the given index
       mChildren.get(iIndex).setParent(null); 
       // remove the node at the given index from child list
-      mChidren.remove( iIndex );
+      mChildren.remove( iIndex );
     }
   }
 
@@ -68,6 +68,8 @@ class NodeBase {
       // eturn the child node at the given index 
       return mChildren.get( iIndex );
     }
+    //itherwise return null 
+    return null; 
   }
 
   int getChildCount() {
@@ -131,11 +133,11 @@ class NodeBase {
       // Fromat indentation string
       String indent =  "   "; 
       int len = indent.length() * iIndent; 
-      String indentStr = new String(new char[len].replace( "\0", indent )); 
+      String indentStr = new String(new char[len]).replace( "\0", indent ); 
       // print node info string
       println( indentStr + mName ); 
       // Print chidlren
-      int tChildCOunt = getChildCount(); 
+      int tChildCount = getChildCount(); 
       for (int i = 0; i < tChildCount; i++) {
         mChildren.get( i ).print( iIndent + 1 );
       }

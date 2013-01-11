@@ -1,10 +1,10 @@
-class NodeCame extends NodeBase{
+class NodeCam extends NodeBase {
   
   EaseVecDelta     mEye, mTarget, mUp; 
   EaseFloat        mFov, mNear, mFar;
   boolean          useOrtho; 
   
-  NOdeCame(Globals iGlobals){
+  NodeCam(Globals iGlobals){
     //initialize base class ( nodeBase)
     super(iGlobals); 
     // initialize camera vector defaults
@@ -40,12 +40,12 @@ class NodeCame extends NodeBase{
     PVector tEye     = getEye(); 
     PVector tTarget  = getTarget(); 
     PVector tUp      = getWorldUp(); 
-    camera( tEye.x, tEye.y, tEye.z, tTarget.x, tTarget.y, tTarget.z, tUp.x, tUP.y, tUP.z ); 
+    camera( tEye.x, tEye.y, tEye.z, tTarget.x, tTarget.y, tTarget.z, tUp.x, tUp.y, tUp.z ); 
   }
   
   // we can add individual state parameters uing the velow methods, these are wrappers for common formats: 
   void addState(String iStateName, PVector iEye, PVector iLook, PVector iUp) {
-    addStateEye( iStateName, iDuration ); 
+    addStateEye( iStateName, iEye ); 
     addStateLookAt( iStateName, iLook ); 
     addStateUpAxis( iStateName, iUp ); 
   }
@@ -89,7 +89,7 @@ class NodeCame extends NodeBase{
   PVector        getWorldUp()                            { return mUp.get(); }
   
   PVector        getEyeVelocity()                        { return mEye.getVelocity(); }
-  Pvector        getTargetVelocity()                     { return mTarget.getVelocity(); }
+  PVector        getTargetVelocity()                     { return mTarget.getVelocity(); }
   PVector        getWorldUpVelocity()                    { return mUp.getVelocity(); }
   
   PVector        getEyeAcceleration()                    { return mEye.getAcceleration(); }

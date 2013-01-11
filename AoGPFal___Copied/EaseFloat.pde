@@ -15,7 +15,7 @@ class EaseFloat {
     controlState = ControlState; 
     //initialize state map 
     stateLibrary = new HashMap(); 
-    setEaseType(11); 
+    setEaseType( 11 ); 
     //reset animation parameters
     resetTransition();
   }
@@ -24,6 +24,11 @@ class EaseFloat {
     easeType = getEaseType(iTypeName);
   }
 
+
+  void setEaseType(int iType) {
+    easeType = iType;   
+  }
+  
   int getEaseType() {
     return easeType;
   }
@@ -68,7 +73,7 @@ class EaseFloat {
       //Clamp elapsed time to duration
       float currentTime = min(elapsedTime, duration); 
       //Apply easing transition
-      controlState = getEaseValue(EaseType, currentTime, beginState, deltaState, duration); 
+      controlState = getEaseValue(easeType, currentTime, beginState, deltaState, duration); 
       //if We've reached duration, tansition is complete and we can reset
       if (elapsedTime >= duration) {
         resetTransition();
@@ -157,7 +162,7 @@ class EaseFloat {
     else if ( iType == 11 )  { return Quart.easeInOut( iTime, iBeginState, iDeltaState, iDuration ); } 
     else if ( iType == 12 )  { return Quint.easeIn( iTime, iBeginState, iDeltaState, iDuration ); } 
     else if ( iType == 13 )  { return Quint.easeOut( iTime, iBeginState, iDeltaState, iDuration ); } 
-    else if ( iType == 14 )  { return Quin.easeInOut( iTime, iBeginState, iDeltaState, iDuration ); } 
+    else if ( iType == 14 )  { return Quint.easeInOut( iTime, iBeginState, iDeltaState, iDuration ); } 
     else if ( iType == 15 )  { return Sine.easeIn( iTime, iBeginState, iDeltaState, iDuration ); } 
     else if ( iType == 16 )  { return Sine.easeOut( iTime, iBeginState, iDeltaState, iDuration ); } 
     else if ( iType == 17 )  { return Sine.easeInOut( iTime, iBeginState, iDeltaState, iDuration ); } 

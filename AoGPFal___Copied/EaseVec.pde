@@ -11,12 +11,12 @@ class EaseVec {
     controlState = new PVector ( 0.0, 0.0, 0.0 );
   }
 
-  EaesVec(Pvector ControlState) {
-    //Initalize Easevars 
-    x = new EaseFloat ( ControlState.x ); 
-    y = new EaseFloat ( ControlState.y ); 
-    z = new EaseFloat ( ControlState.z ); 
-    //Set control variable
+  EaseVec(PVector ControlState) {
+    // Initialize ease vars
+    x = new EaseFloat( ControlState.x );
+    y = new EaseFloat( ControlState.y );
+    z = new EaseFloat( ControlState.z );
+    // Set control variable
     controlState = ControlState.get();
   }
 

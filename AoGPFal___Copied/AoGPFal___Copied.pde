@@ -80,7 +80,7 @@ void setup() {
     int tRandB = (int)random(0, 6); 
 
     if (tRandA % 6 == 0) {
-      curr = mScene.addMesh(ptsPerAxis, ptxPerAxis, 300.0, 150.0); 
+      curr = mScene.addMesh(ptsPerAxis, ptsPerAxis, 300.0, 150.0); 
       curr.setRotationVelocity(new PVector(random(-0.01, 0.01), random(-0.01, 0.01), random(-0.01, 0.01)));
     }
 
@@ -144,7 +144,7 @@ void setup() {
 
     String lightStateName0 = "light_0_state_" + (i); 
     String lightStateName1 = "light_1_state_" + (i); 
-    mScene.mLights[0].createSpotLightState(lightStateName0, 20, 20, 255, lightPos, lightDir, radians(80.0), 200.0); 
+    mScene.mLights[0].createSpotlightState( lightStateName0, 20, 20, 255, lightPos, lightDir, radians(80.0), 200.0 );
     mScene.mLights[1].createPointState(lightStateName1, 104, 94, 50, PVector.add(lightPos, lightDir));
   }
 
